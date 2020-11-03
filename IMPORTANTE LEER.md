@@ -6,6 +6,6 @@ Los ejercicios de packet tracer de Laboratorio de Redes deben abrirse con la ver
 Los demas ejercicios de Packet Tracer que se encuentran en otras carpetas deben abrirse con la versión 7.3. 
 
 Para mayor comodidad en la visualización de los ejercicios y mitigar errores de funcionamiento que ocurren en la versión 6.3,
-recomiendo utilizar la última versión de Packet Tracer.
+recomiendo utilizar la última versión de Packet Tracer para todos los ejercicios.
 
 
