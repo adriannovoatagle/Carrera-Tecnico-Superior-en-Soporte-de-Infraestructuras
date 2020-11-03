@@ -1,0 +1,349 @@
+traiga (hasta ahora eso), y anduvo!
+
+1.png
+Imagen
+
+2.png
+Imagen
+
+3.png
+Imagen
+
+Eduardo Jorge Díaz10 jun.
+No, para nada, al principio me falló por poner los nombres en mayúscula la primer letra, pero como no sabía como cambiar la base de datos la tuve que eliminar y volverla a crear en minúscula, tal cual como habías sugerido en clase
+
+Anuncio: "Base de Datos de practica"
+Jorge Alexander
+Fecha de creación: 5 jun.5 jun. (Última modificación: 12 jun.)
+Base de Datos de practica
+
+universidad.sql
+SQL
+
+Anuncio: "Hola chicos anexo las laminas de la…"
+Jorge Alexander
+Fecha de creación: 5 jun.5 jun. (Última modificación: 12 jun.)
+Hola chicos anexo las laminas de la unidad 10, con los ejemplos correspondientes
+
+Unidad 10.pdf
+PDF
+
+ejemplo01.php
+PHP
+
+ejemplo02.php
+PHP
+
+ejemplo03.php
+PHP
+
+registro.php
+PHP
+
+script01.sql
+SQL
+
+search.php
+PHP
+
+Eduardo Jorge Díaz5 jun.
+Profe, gracias por la info. Podremos hacer ejemplos en clase? Porque veo que vincular a PHP con bases de datos se ve re difícil...
+
+Jorge Alexander5 jun.
+Hola Eduardo, si la idea es que hoy veamos la teoria de Base de Datos, ejemplos en MySQL. La semana que viene haremos la conexión con PHP y ejemplos reales.
+
+Anuncio: "Hola chicos la clase del día de hoy…"
+Jorge Alexander
+Fecha de creación: 29 may.29 may.
+Hola chicos la clase del día de hoy 29-05-2019 esta suspendida por el paro de transporte, nos vemos el próximo miércoles
+
+Anuncio: "Hola chicos anexo las laminas de la…"
+Jorge Alexander
+Fecha de creación: 23 may.23 may.
+Hola chicos anexo las laminas de la unidad 09, con los ejemplos correspondientes
+
+ejemplo01.php
+PHP
+
+ejemplo02.php
+PHP
+
+ejemplo03.php
+PHP
+
+ejemplo04.php
+PHP
+
+Unidad 09.pdf
+PDF
+
+Anuncio: "Hola chicos anexo las laminas de la…"
+Jorge Alexander
+Fecha de creación: 23 may.23 may.
+Hola chicos anexo las laminas de la unidad 08, con los ejemplos correspondientes
+
+ejemplo01.php
+PHP
+
+ejemplo02.php
+PHP
+
+ejemplo03.php
+PHP
+
+ejemplo04.php
+PHP
+
+ejemplo05.php
+PHP
+
+Unidad 08.pdf
+PDF
+
+Anuncio: "Hola chicos les recuerdo que el día de…"
+Jorge Alexander
+Fecha de creación: 15 may.15 may.
+Hola chicos les recuerdo que el día de hoy 15 de mayo, es el examen
+
+El contenido es desde la unidad 01 a la unidad 07. El examen se divide en dos partes: Teórico y Práctico.
+
+Nos vemos a las 19hs
+
+Publicado por Francisco Jonathan Chávez
+Francisco Jonathan Chávez
+Fecha de creación: 13 may.13 may.
+Buenas tardes profesor:
+Le escribo para solicitarle los temas que entran en el parcial para la parte escrita por favor. 
+Muchas Gracias
+
+Jorge Alexander14 may.
+Hola Francisco, los temas son de la unidad 01 a la unidad 07, las presentaciones se encuentran en el muro, las puedes descargar de allí.
+
+Cualquier duda avísame
+
+Anuncio: "Ejemplo de uso de textarea"
+Jorge Alexander
+Fecha de creación: 8 may.8 may.
+Ejemplo de uso de textarea
+
+prueba.php
+PHP
+
+test.php
+PHP
+
+Anuncio: "Ejercicio resuelto de la clase del 08…"
+Jorge Alexander
+Fecha de creación: 8 may.8 may.
+Ejercicio resuelto de la clase del 08 de mayo de 2019
+
+proceso.php
+PHP
+
+registro.php
+PHP
+
+--
+-- Base de datos: `universidad`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumnos`
+--
+
+CREATE TABLE `alumnos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `dni` int(10) UNSIGNED NOT NULL,
+  `nombres` varchar(256) NOT NULL,
+  `apellidos` varchar(256) NOT NULL,
+  `telefono` varchar(12) NOT NULL,
+  `mail` varchar(128) NOT NULL,
+  `fecha_nac` date NOT NULL,
+  `id_facultades` int(10) UNSIGNED NOT NULL,
+  `id_cursos` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cursos`
+--
+
+CREATE TABLE `cursos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(128) NOT NULL,
+  `cuatrimestre` varchar(128) NOT NULL,
+  `dias` int(10) UNSIGNED NOT NULL,
+  `años` int(10) UNSIGNED NOT NULL,
+  `url` varchar(512) NOT NULL,
+  `precio` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `facultades`
+--
+
+CREATE TABLE `facultades` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(512) NOT NULL,
+  `direccion` varchar(256) NOT NULL,
+  `mail` varchar(128) NOT NULL,
+  `telefono` varchar(12) NOT NULL,
+  `director` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materias`
+--
+
+CREATE TABLE `materias` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(128) NOT NULL,
+  `horario` varchar(1024) NOT NULL,
+  `id_cursos` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `nivel`
+--
+
+CREATE TABLE `nivel` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas`
+--
+
+CREATE TABLE `notas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nota` float UNSIGNED NOT NULL,
+  `id_materias` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `profesores`
+--
+
+CREATE TABLE `profesores` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `dni` int(10) UNSIGNED NOT NULL,
+  `nombres` varchar(256) NOT NULL,
+  `apellidos` varchar(256) NOT NULL,
+  `telefono` varchar(12) NOT NULL,
+  `mail` varchar(128) NOT NULL,
+  `id_facultades` int(10) UNSIGNED NOT NULL,
+  `id_nivel` int(10) UNSIGNED NOT NULL,
+  `id_cursos` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `alumnos`
+--
+ALTER TABLE `alumnos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `dni_unico` (`dni`),
+  ADD KEY `facultades_alumnos_curso` (`id_facultades`,`id_cursos`);
+
+--
+-- Indices de la tabla `cursos`
+--
+ALTER TABLE `cursos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `facultades`
+--
+ALTER TABLE `facultades`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `materias`
+--
+ALTER TABLE `materias`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `materias_cursos` (`id_cursos`);
+
+--
+-- Indices de la tabla `nivel`
+--
+ALTER TABLE `nivel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `notas`
+--
+ALTER TABLE `notas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `materias_notas` (`id_materias`) USING BTREE;
+
+--
+-- Indices de la tabla `profesores`
+--
+ALTER TABLE `profesores`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `dni_unico_prof` (`dni`),
+  ADD UNIQUE KEY `facultades_nivel_cursos_profesores` (`id_facultades`,`id_nivel`,`id_cursos`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `alumnos`
+--
+ALTER TABLE `alumnos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `facultades`
+--
+ALTER TABLE `facultades`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `materias`
+--
+ALTER TABLE `materias`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `nivel`
+--
+ALTER TABLE `nivel`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `notas`
+--
+ALTER TABLE `notas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `cursos`
+--
+ALTER TABLE `cursos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `profesores`
+--
+ALTER TABLE `profesores`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;

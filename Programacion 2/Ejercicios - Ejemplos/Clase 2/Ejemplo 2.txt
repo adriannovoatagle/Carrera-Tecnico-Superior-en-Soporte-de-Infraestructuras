@@ -1,0 +1,43 @@
+<?php
+
+/*
+	Se solicitan tres números.
+	Los números pueden ser decimales.
+	Los números deben ser superiores a -1.000 e inferiores a 1.000.
+	Se debe indicar si los tres números son iguales, si hay dos iguales o si los tres son distintos.
+*/
+ 	
+ 	$num1 = 10.0;
+ 	$num2 = 108.0;
+ 	$num3 = 102.0;
+
+	if (($num1 >= -1000.0 && $num1 < 1000.0) && ($num2 >= -1000.0 && $num2 < 1000.0)
+			&& ($num3 >= -1000.0 && $num3 < 1000.0))
+	{
+		if ($num1 == $num2 && $num1 == $num3)
+		{
+			echo "Los tres numeros son iguales <br/>";
+		}
+		else if ($num1 == $num2 && $num1 != $num3)
+		{
+			echo "Los numeros 1 y 2 son iguales  <br/>";	
+		}		
+		else if ($num1 != $num2 && $num1 == $num3)
+		{
+			echo "Los numeros 1 y 3 son iguales  <br/>";	
+		}		
+		else if ($num2 == $num3 && $num2 != $num1)
+		{
+			echo "Los numeros 2 y 3 son iguales  <br/>";	
+		}
+		else if ($num1 != $num2 && $num1 != $num3 && $num2 != $num3)
+		{
+			echo "Los tres numeros son diferentes <br/>";	
+		}
+	}
+	else
+	{
+		echo "Los numeros no cumplen los requisitos <br/>";
+	}
+
+?>

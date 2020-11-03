@@ -1,0 +1,26 @@
+<?php
+
+/*
+	Ingresar el dividendo y el divisor.
+	El dividendo y el divisor pueden ser números decimales.
+	El dividendo y el divisor deben ser positivos e inferiores a 1.000.
+	El divisor tiene que ser un número diferente de cero, pero el dividendo puede ser cero.
+	Mostra el cociente y el resto de la division
+*/
+
+	$dividendo = 20;
+	$divisor = 2;
+
+	if (($dividendo >= 0.0 && $dividendo < 1000.0) && ($divisor > 0 && $divisor < 1000.0))
+	{
+		$cociente = $dividendo / $divisor;
+		$resto = $dividendo % $divisor;
+		echo "El resultado de la division " . $cociente . " <br/>";		
+		echo "El resto de la division " . $resto . " <br/>";
+	}
+	else
+	{
+		echo "Revisar el divisor y el dividendo";
+	}
+
+?>

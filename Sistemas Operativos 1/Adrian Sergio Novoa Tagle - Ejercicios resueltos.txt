@@ -1,0 +1,108 @@
+TAREA
+-----
+
+1) 
+
+mkdir -p /tmp/dir1/a/b/c
+cd
+cp -r /etc /tmp/dir1/a/b/c
+mv /tmp/dir1/a/b/c /tmp/dir1/a
+
+
+2)
+
+touch archi{1,2,3}
+
+chown bin:ftp archi1
+chown ftp:bin archi2
+chown root:users archi3
+
+
+chmod 544 archi1
+chmod 710 archi2
+chmod 752 archi3
+
+chmod u=rx,g=r,o=r archi1
+chmod u=rwx,g=x,o=- archi2
+chmod u=rwx,g=rx,o=w archi3	
+
+
+3) 
+
+ls -Ra > listado.txt  (Ejecutado desde el directorio raiz)
+
+
+4)
+a)
+
+cut -d"," -f1,2,4 nombre_de_archivo
+
+b) 
+
+wc -w nombre_de_archivo
+
+
+
+5) Cual es la descripción más apropiada para el contenido del directorio /etc?
+
+a) archivos de poca utilidad
+b) configuraciones en general			x
+c) archivos que cambian continuamente
+
+
+6)
+
+chown -R bin:daemon /tmp/dir1/a/b /tmp/dir1/a/c
+
+a) 
+
+find /tmp/dir1 -type f -user bin -exec chmod 740 {} \;
+
+
+
+7) Del siguiente texto identificar únicamente las líneas que contengan exactamente la palabra linux
+
+estoy usando windows me aparece pantalla azul
+estoy usando linux y funciona muy bien			
+usuarios linuxeros
+
+a) grep '\<linux\>' archivo.txt        x
+b) grep \'<linux>\' archivo.txt
+c) grep '\[linux\]' archivo.txt
+d) grep -v linux archivo.txt
+e) grep 'linux' archivo.txt
+
+
+8) Cuál es la opción válida para que la salida del comando sea con una H en mayúscula?
+
+a) echo "hola mundo"|sort|wc|upper
+b) echo "hola mundo"|to_upper
+c) echo "holado"|cut -d"H" -f1
+d) echo "hola mundo"| tr [:lower:] H
+e) echo "hola mundo"|paste H
+f) echo "hola mundo"| tr h H			x
+g) echo "hola mundo"| format H:
+h) echo "hola mundo"| tr h [:upper:]
+
+
+9) Tengo un archivo llamado prueba.txt, con los siguientes permisos
+
+-rwxr-xr-- 1  istea  ftp  334 Sep 2 2015  prueba.txt
+
+a) 
+
+chown bind:users prueba.txt
+
+b) 
+
+setfacl -m user:sys:rw prueba.txt
+
+
+10)
+
+Se añade al final del comando el signo ampersand (&).
+
+a) 
+
+Con el comando fg. Inclusive se puede volver a primer plano un proceso determinado con fg %numero_de_trabajo (previamente ejecutando
+el comando jobs para mostrar los procesos enviados a segundo plano y su respectivo número).

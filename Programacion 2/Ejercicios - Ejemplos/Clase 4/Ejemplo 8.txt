@@ -1,0 +1,25 @@
+<?php
+
+	$cadena = "abcdef";
+
+	$rest = substr($cadena, -1);    // devuelve "f"
+	echo $cadena . ' ===> ' . $rest . '<br/> <br/>';
+
+	$rest = substr($cadena, -2);    // devuelve "ef"
+	echo $cadena . ' ===> ' . $rest . '<br/> <br/>';
+
+	$rest = substr($cadena, -3, 1); // devuelve "d“
+	echo $cadena . ' ===> ' . $rest . '<br/> <br/>';
+
+	$rest = substr($cadena, 0, -1);  // devuelve "abcde"
+	echo $cadena . ' ===> ' . $rest . '<br/> <br/>';
+
+	$rest = substr($cadena, 2, -1);  // devuelve "cde"
+	echo $cadena . ' ===> ' . $rest . '<br/> <br/>';
+
+	$rest = substr($cadena, 4, -4);  // devuelve false
+	echo $cadena . ' ===> ' . $rest . '<br/> <br/>';
+
+	$rest = substr($cadena, -3, -1); // devuelve "de"
+	echo $cadena . ' ===> ' . $rest . '<br/> <br/>';
+?>

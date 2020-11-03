@@ -1,0 +1,15 @@
+<?php
+
+	//Dado dos arreglos de similar tamano, utilizar los valores del primer arreglo y convertilos en las claves del segundo arreglo
+
+	$array1 = [5, 10, 15, 20, 25];
+	$array2 = [2, 4, 6, 8, 10];
+	
+	for ($i = 0; $i < count($array1); $i++)
+	{
+		$array_res[$array1[$i]] =  $array2[$i];
+	}
+
+	var_dump($array_res);
+
+?>

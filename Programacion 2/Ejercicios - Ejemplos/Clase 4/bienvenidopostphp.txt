@@ -1,0 +1,7 @@
+
+<html>
+	<body>
+		Bienvenido <?php echo $_POST["nombre"]; ?> <br/>
+		Tu Email es: <?php echo $_POST["email"]; ?>
+	</body>
+</html>

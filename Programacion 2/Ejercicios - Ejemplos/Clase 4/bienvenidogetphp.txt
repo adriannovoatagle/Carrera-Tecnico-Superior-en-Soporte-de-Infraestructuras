@@ -1,0 +1,6 @@
+<html>
+	<body>
+		Bienvenido <?php echo $_GET["nombre"]; ?> <br/> <br/>
+		Tu email es: <?php echo $_GET["email"]; ?>
+	</body>
+</html>

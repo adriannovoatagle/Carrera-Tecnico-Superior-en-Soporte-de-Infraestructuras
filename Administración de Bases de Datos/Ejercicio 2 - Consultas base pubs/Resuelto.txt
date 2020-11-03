@@ -1,0 +1,42 @@
+--SQL - Ejercicio 2 - Consultas base pubs
+--Punto 1
+select * from authors where state ='CA' and au_lname not like 'R%'
+
+--Punto 2
+select type, count(*), avg(price) from titles group by type
+
+--Punto 3
+select avg(price) from titles
+
+--Punto 4
+select stor_name,sum(qty*price) as total,avg(qty*price) as total from stores 
+inner join sales on sales.stor_id=stores.stor_id 
+inner join titles on sales.title_id=titles.title_id
+group by stor_name
+
+--Punto 5
+--set ROWCOUNT 1 
+
+select top 1 job_lvl, count(*) as total from employee --"top 1" o "top 2" trae los primeros registros (1 o 2 respectivamente). Otra forma es poniendo "set ROWCOUNT 1", esto solo mostrara un dato.
+inner join jobs on employee.job_id = jobs.job_id
+group by job_lvl
+order by total desc
+
+--Punto 6
+select job_lvl,count(*) as cantidad from employee
+inner join publishers on employee.pub_id=publishers.pub_id
+group by job_lvl
+having count(*) > 1
+order by job_lvl desc,cantidad desc
+
+--Punto 7
+select top 1 pub_name,hire_date from employee
+inner join publishers on employee.pub_id=publishers.pub_id
+order by hire_date
+
+--Punto 8
+select distinct au_fname, au_lname from authors --distinct. Cuando se repiten las cosas va a traer una solo.
+inner join titleauthor on titleauthor.au_id = authors.au_id
+inner join titles on titles.title_id = titleauthor.title_id
+inner join sales on sales.title_id = titles.title_id
+where payterms='Net 60'

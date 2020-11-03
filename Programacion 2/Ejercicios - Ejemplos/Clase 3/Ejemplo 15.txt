@@ -1,0 +1,19 @@
+<?php
+
+/* 
+	Mostrar todas la tablas de multiplicar del 1 al 10
+*/
+	$i = 0;
+	$j = 0; 
+
+	do {
+   		$i += 1;
+   		echo "<br/> Tabla del numero $i <br/>";
+   		while ($j < 10) {
+   			$j += 1;
+	   		$resul = $i * $j; 
+	    	echo "Resultado de: $i x $j  = $resul <br/>";
+	    }
+	    $j = 0;
+	} while ($i < 10)
+?>

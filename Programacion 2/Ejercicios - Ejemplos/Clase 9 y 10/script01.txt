@@ -1,0 +1,41 @@
+CREATE DATABASE registro;
+
+USE registro;
+
+CREATE TABLE `registro`.`alumnos` 
+( `id` INT NOT NULL AUTO_INCREMENT , 
+	`apellido` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+	`nombre` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+	`direccion` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL , 
+	`ciudad` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL , 
+	PRIMARY KEY (`id`)) ENGINE = MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+ALTER TABLE `alumnos` ADD `edad` INT UNSIGNED NOT NULL AFTER `ciudad`;
+
+ALTER TABLE `alumnos` ADD `email` VARCHAR(128) NULL AFTER `apellido`;
+
+ALTER TABLE `alumnos` CHANGE `nombre` `nombre` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+INSERT INTO `alumnos` (`id`, `apellido`, `nombre`, `direccion`, `ciudad`, `edad`) VALUES (NULL, 'Perez', 'Juan', NULL, NULL, 0);
+
+INSERT INTO `alumnos` (`id`, `apellido`, `nombre`, `direccion`, `ciudad`, `edad`) VALUES (NULL, 'Iglesias', 'Carolina', NULL, NULL, 0);
+
+UPDATE `alumnos` SET `edad` = '45';
+
+UPDATE `alumnos` SET `edad` = '25' WHERE `alumnos`.`id` = 2;
+
+DELETE FROM `alumnos` WHERE `alumnos`.`id` = 2;
+
+DELETE FROM `alumnos`;
+
+SELECT * FROM `alumnos` ORDER BY 'id' DESC;
+
+SELECT `id`, `apellido`, `nombre` FROM `alumnos` ORDER BY `id` ASC;
+
+SELECT * FROM `alumnos` WHERE `edad` > 0;
+
+TRUNCATE TABLE `alumnos`; 
+
+DROP TABLE `alumnos`; 
+
+DROP DATABASE `registro`;

@@ -1,0 +1,12 @@
+<?php
+
+/* 
+	Mostrar la tabla de multiplicar del 5
+*/
+ 	$tabla = 5;
+
+   	for ($i = 1; $i <= 10; $i++) {
+   		$resul = $tabla * $i; 
+    	echo "Resultado de: $tabla x $i  = $resul <br/>";
+	}
+?>

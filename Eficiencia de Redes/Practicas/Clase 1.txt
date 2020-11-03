@@ -1,0 +1,10 @@
+1- 3 Sucursales (Cordoba, Mendoza, Buenos Aires).
+2- 2 SW de acceso de cada sucursal.
+3- 1 Router en cada sucursal.
+4- 4 Vlans con el nombre del depto.
+5- Interconectar las 3 sucursales.
+6- Usar rutas estaticas.
+7- Usar cableado UTP.
+NOTA: Colocar el nombre a cada equipo.
+
+marbelis.marquez@istea.com.ar

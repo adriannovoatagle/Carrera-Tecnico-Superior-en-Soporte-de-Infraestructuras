@@ -1,0 +1,60 @@
+<?php
+	// Conexión
+	define('HOST_DB', 'localhost');
+	define('USER_DB', 'root');
+	define('PASS_DB', '');
+	define('NAME_DB', 'registro');
+
+	// Conexión
+	function conectar(){
+		global $conexion; //Definición global
+		$conexion = mysqli_connect(HOST_DB, USER_DB, PASS_DB, NAME_DB)
+			or die ('Nose realizo la conexion con la base de datos');
+		mysqli_set_charset($conexion,"utf8");	
+		return $conexion;
+	}
+
+	function desconectar(){
+		global $conexion;
+		mysqli_close($conexion);
+	}
+
+	//Variable para el resultado de la búsqueda
+	$texto = '';
+	//Variable para el número de registros encontrados
+	$registros = '';
+	
+	if($_POST){
+		$busqueda = trim($_POST['buscar']);
+		$entero = 0;
+		if (empty($busqueda)){
+			$texto = 'Búsqueda sin resultados';
+			echo $texto;
+		}else{
+			// Si hay información para buscar, se abre la conexión
+			$con = conectar();
+			//Consulta la base de datos, se utiliza un comparador LIKE
+			$sql = "SELECT * FROM alumnos WHERE apellido LIKE '%"
+			.$busqueda. "%' ORDER BY apellido";
+			$resultado = $con->query($sql); // Consulta
+			//Si hay resultados
+			if (mysqli_num_rows($resultado) > 0){			
+				// Registra el número de resultados
+
+				$registros = '<p>Se han encontrado ' . mysqli_num_rows($resultado) . '
+				registros </p>';
+				// Se almacenan las cadenas de resultado
+				while($fila = mysqli_fetch_assoc($resultado)){
+					$texto .= $fila['nombre'] . ' ';
+					$texto .= $fila['apellido'] . '<br />';
+				}
+			}else{				
+				$texto = "Sin resultados en la base de datos";							
+			}	
+			echo $texto;		
+			// No deja conexiones abiertas)
+			mysqli_close($conexion);
+		}
+	}
+
+?>

@@ -1,0 +1,25 @@
+<?php
+
+	//Dada la siguiente estructura
+
+	$nombre = ['Matias', 'Lucas', 'Carolina'];
+	$apellido = ['Armanini', 'Perez', 'Quintero'];
+	$edad = [22, 32, 26];
+
+	//Crear una matriz de dos dimensiones que tenga la siguiente estructura
+	//$estudiantes[0]['nombre'];
+	//$estudiantes[0]['apellido'];
+	//$estudiantes[0]['edad'];
+
+	$estudiante = array();
+
+	for ($i = 0; $i < count($nombre); $i++)
+	{
+		$estudiantes[$i]['nombre'] = $nombre[$i]; 
+		$estudiantes[$i]['apellido'] = $apellido[$i]; 
+		$estudiantes[$i]['edad'] = $edad[$i]; 
+	}
+
+	var_dump($estudiantes);
+
+?>

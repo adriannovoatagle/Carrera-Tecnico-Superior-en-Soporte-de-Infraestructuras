@@ -1,0 +1,26 @@
+<?php
+
+/* 
+	Agregue el nombre del color
+*/
+ 	
+   $colores = "amarillo";
+   switch($colores){
+ 
+	  case "azul":
+		  echo "Yo soy el color azul";
+		  break;
+
+	  case "amarillo":
+		  echo "Yo soy el color amarillo";
+		  break;
+
+	  case "rojo":
+		  echo "Yo soy el color rojo";
+		  break;
+
+	  default:
+		  echo "Lo siento, ese color no lo tenemos registrado";
+		  break;
+   }
+?>

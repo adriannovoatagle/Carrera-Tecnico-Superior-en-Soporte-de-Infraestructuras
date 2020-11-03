@@ -1,0 +1,5 @@
+print ("Escriba primer numero: ")
+x = int (input ())
+print ("Escriba segundo numero: ")
+y = int (input ())
+print ("La suma de ambos numeros es: ", (x + y))

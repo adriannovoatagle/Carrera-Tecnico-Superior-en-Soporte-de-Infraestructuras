@@ -1,0 +1,26 @@
+<?php
+
+	/*
+	Dados la siguiente estructura con judadores de futbol
+	Se deben imprimir el nombre del club con sus judadores Respectivos, 
+	y separar por saltos de linea
+	*/
+
+	$equipos_futbol = array
+		(
+			'Barcelona' => array('Messi', 'Suarez', 'Pique', 'Ter Stegen'),
+			'Juventus' => array('Cristiano', 'Dybala', 'Chiellini', 'Pjanic'),
+			'Manchester city' => array('Aguero', 'De Bruyne', 'Otamendi', 'Gabriel Jesus')
+		);
+
+	foreach($equipos_futbol as $equipo => $jugadores)
+	{
+		echo "En el equipo $equipo juegan: ";
+		foreach($jugadores as $jugador)
+		{
+			echo $jugador ." ";
+		}
+		echo "<br/> <br/> <br/>";
+	}
+
+?>

@@ -1,0 +1,30 @@
+WAN:
+
+192.168.0.0/30  (BS AS - CORDOBA)
+192.168.1.0/30  (CORDOBA - MENDOZA)
+
+LAN:
+
+BS AS
+
+Contaduria: 10.10.10.0/24
+Informatica: 20.20.20.0/24
+
+vlan 10
+vlan 20
+
+CORDOBA
+
+Contaduria: 30.30.30.0/24
+Informatica: 40.40.40.0/24
+
+vlan 30
+vlan 40
+
+MENDOZA
+
+Contaduria: 50.50.50.0/24
+Informatica: 60.60.60.0/24
+
+vlan 50
+vlan 60

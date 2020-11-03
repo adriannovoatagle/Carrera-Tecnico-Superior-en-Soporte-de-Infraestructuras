@@ -1,0 +1,29 @@
+<?php
+
+/* 
+	Agregue una nota para indicar la calificacion
+	La nota debe ser mayor a cero y maximo 10
+	No se permiten notas mayores a 10
+*/
+ 	
+ 	$valor = 10;
+ 	
+	switch($valor)
+    {
+	    case (($valor) > 0 && ($valor < 5)):
+		    echo "Nota muy baja: $valor";
+		    break;
+		 
+	    case (($valor >= 6) && ($valor <= 9)):
+		    echo "Buena nota: $valor";
+		    break;
+		 
+	    case ($valor == 10):
+		    echo "Excelente nota: $valor";
+		    break;
+
+		default:
+			echo "La nota es incorrecta: $valor";
+			break;
+    }
+?>

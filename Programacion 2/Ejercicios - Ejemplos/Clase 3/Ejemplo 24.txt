@@ -1,0 +1,15 @@
+<?php
+
+	//Sumar todos los valores de un arreglo
+
+	$numeros = [1, 2, 3, 4, 5];
+	$acu = 0;
+
+	foreach ($numeros as $key => $value) {
+		$acu += $value; 
+	}
+	echo "La suma es: $acu <br/>";
+
+	echo "La suma es: " . (array_sum($numeros)) . "<br/>"; 
+
+?>

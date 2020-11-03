@@ -1,0 +1,11 @@
+
+<?php
+
+	$str = 'abcdef';
+	echo $str . ' = ' . strlen($str);
+	echo '<br> <br> <br>'; 
+
+	$str = ' ab cd ';
+	echo $str . ' = ' . strlen($str); 
+
+?>

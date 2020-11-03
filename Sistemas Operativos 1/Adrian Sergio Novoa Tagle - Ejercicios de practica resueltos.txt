@@ -1,0 +1,62 @@
+1-
+
+mount -o remount -rw /mnt/disco
+
+2-
+
+Se modifica el archivo /etc/fstab agregando las opciones usrquota y grpquota para la particion en la que se va a activar la quota. Ej:
+
+dev/sda5	/mnt/disco	ext4	defaults,usrquota,grpquota	0	0
+
+Se remonta el disco que tome las opciones usrquota,grpquota. Ej:
+
+mount -o remount /mnt/disco
+
+Se inicializa la base de datos.Ej:
+
+quotacheck -mugv /mnt/disco
+
+se habilita la quota en la particion.Ej:
+
+quotaon /mnt/disco
+
+3-
+
+useradd cacho
+groupadd usuarios
+
+usermod -g usuarios -G cdrom cacho
+
+4-
+
+useradd pedro
+
+chage -M 45 pedro
+
+5-
+
+setquota -u pedro 500000 0 5000 0 /mnt/disco
+
+6-
+
+Se edita el archivo etc/sudoers. Ej:
+
+pedro  ALL=(root)  /bin/chown, /bin/chmod
+
+
+7-
+
+Logrotate
+
+8-
+
+Journaling (registro por diario)
+
+9-
+
+ifconfig eth0 192.168.0.22 netmask 255.255.255.0
+
+10-
+
+Primera opcion
+

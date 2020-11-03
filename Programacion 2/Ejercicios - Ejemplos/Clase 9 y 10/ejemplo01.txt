@@ -1,0 +1,34 @@
+<?php
+
+	//*********** Funciones de Base de datos *****************
+	function getConnection(){
+		//armado de URL
+		$driver='mysql';
+		$hostname='localhost';
+		$username='root';
+		$password='root';
+		$base='universidad';
+
+		$conn = mysqli_connect($hostname, $username, $password, $base);
+
+		if (!$conn) {
+		    die("Connection failed: " . mysqli_connect_error());
+		}
+		echo "Conexion Exitosa <br/> <br/>";
+
+		$sql = "SELECT id, nombre, apellido FROM alumnos";
+		$result = $conn->query($sql);
+
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) {
+		        echo "id: " . $row["id"]. " - Nombre: " . $row["nombre"]. " " . $row["apellido"]. "<br/> <br/>";
+		    }
+		} else {
+		    echo "0 resultados";
+		}
+		$conn->close();
+	}
+	
+	getConnection();
+?>

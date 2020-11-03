@@ -1,0 +1,51 @@
+<?php
+
+	//Funcion count
+	$a[0] = 1;
+	$a[1] = 3;
+	$a[2] = 5;
+	var_dump(count($a));
+	
+	//Funcion array_key_exists
+	$search_array = array('first' => 1, 'second' => 4);
+	if (array_key_exists('first', $search_array)) {
+		echo "El elemento 'first' existe en el arreglo";
+		echo '<br/> <br/>';
+	}
+
+	//Funcion array_change_key_case
+	$input_array = array("FirSt" => 1, "SecOnd" => 4);
+	print_r(array_change_key_case($input_array, CASE_UPPER));	
+	echo '<br/> <br/>';
+
+	//Funcion array_replace
+	$base = array("naranja", "plátano", "manzana", "frambuesa");
+	$reemplazos = array(0 => "piña", 4 => "cereza");
+	$reemplazos2 = array(0 => "uva");
+	$cesta = array_replace($base, $reemplazos, $reemplazos2);
+	print_r($cesta);
+	echo '<br/> <br/>';
+	
+	//Funcion array_unique
+	$entrada = array("a" => "verde", "rojo", "b" => "verde", "azul", "rojo");
+	$resultado = array_unique($entrada);
+	print_r($resultado);
+	echo '<br/> <br/>';
+	
+	//Funcion asort
+	$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+	asort($fruits);
+	foreach ($fruits as $key => $val) {
+		echo "$key = $val <br/>";
+	}
+	echo '<br/>';
+	
+	//Funcion arsort
+	$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+	arsort($fruits);
+	foreach ($fruits as $key => $val) {
+		echo "$key = $val <br/>";
+	}
+	echo '<br/> <br/>';	
+
+?>	

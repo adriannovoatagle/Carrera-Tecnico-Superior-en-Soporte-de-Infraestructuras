@@ -1,0 +1,32 @@
+<?php
+
+	$array = array(
+		"foo" => "bar",
+		"bar" => "foo",
+	);
+
+	var_dump($array);
+
+	$array = [
+		"foo" => "bar",
+		"bar" => "foo",
+		];
+
+	var_dump($array);
+	
+	$datos = [
+		["nombre" => "pepe", "edad" => 25, "peso" => 80],
+		["nombre" => "juan", "edad" => 22, "peso" => 75]
+		];
+
+	var_dump($datos, $datos[1]['nombre'], $datos[1]);
+	
+	$datos = array();
+
+	$datos[1]["nombre"] = "Santiago";
+	$datos[1]["apellidos"] = "Ramón";
+	$datos[2]["nombre"] = "Leonardo";
+	$datos[2]["apellidos"] = "Jose";
+
+	var_dump($datos);		
+?>

@@ -1,0 +1,14 @@
+Dejo las instrucciones para recuperar una constraseña
+Abrir cmd de administrador
+net stop MSSQLSERVER
+net start MSSQLSERVER /m
+sqlcmd -SServerName\InstanceName
+
+>CREATE LOGIN RecoveryAcct WITH PASSWORD=’TempPass!’
+>GO
+>SP_ADDSRVROLEMEMBER RecoveryAcct,’SYSADMIN’
+>GO
+>QUIT
+
+net stop MSSQLSERVER
+net start MSSQLSERVER

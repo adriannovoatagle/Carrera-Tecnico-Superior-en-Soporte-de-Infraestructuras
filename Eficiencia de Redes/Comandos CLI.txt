@@ -1,0 +1,40 @@
+COMANDOS BASICOS Y DE CONFIGURACION
+
+Modo usuario
+- (>)
+
+Ingresar en modo privilegiado:
+- enable (#)
+
+Ingresar en modo de configuracion Global:
+- Configure Terminal
+
+Cambiar el nombre del equipo:
+- hostname (nombre)
+
+Configurar interfaz de acceso en un switch
+- interface fastethernetx/x   - Ingresar a la interfaz
+- switchport mode access      - Coloca la interfaz en modo acceso
+- switchport access vlan x    - Se asigna una vlan a la interfaz
+
+Configurar interfaz troncal en un switch
+
+- interface fastethernetx/x                - Ingresar a la interfaz
+- switchport mode trunk                    - Coloca la interfaz en modo troncal
+- switchport trunk allowed vlan x          - Permitir la o las Vlans
+
+Crear vlan en un switch
+
+- vlan x      - Crear la vlan
+- name xxxx   - Asignarle un nombre
+
+Configurar sub-interfaz en un router
+
+- interface fastethernetx/x                - Ingresar enn la interfaz fisica
+- no shutdown                              - Levantar la interfaz fisica
+- interface fastethernetx/x.x              - Ingresar a la sub-interfaz
+- encapsulation dot1q x                    - Permitir la Vlan en la subinterfaz
+
+Crear rutas estaticas en un router
+
+ip route x.x.x.x   x.x.x.x   x.x.x.x       - crear ruta estatica, ip, mascara, ip de interfaz de salid.
